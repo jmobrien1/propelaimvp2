@@ -697,6 +697,19 @@ Return only the valid JSON object.
                 logger.error(
                     f"Pydantic validation failed for requirement {requirement.get('reference', 'unknown')}: {e}"
                 )
+                # Log the malformed data for debugging
+                try:
+                    raw_response = await (
+                        synthesis_prompt | llm).ainvoke({
+                            "complete_context": complete_context
+                        })
+                    logger.warning(
+                        f"Malformed JSON from LLM for requirement {requirement.get('reference', 'unknown')}: {raw_response.content}"
+                    )
+                except Exception as llm_e:
+                    logger.error(
+                        f"Could not even get raw response from LLM after validation failure: {llm_e}"
+                    )
                 continue
             except Exception as e:
                 logger.error(
