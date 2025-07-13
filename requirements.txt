@@ -1,0 +1,14 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+openai
+PyMuPDF
+python-docx
+pydantic
+unstructured[all-docs]
+faiss-cpu
+langchain
+langchain-openai
+tiktoken
+langchain-community
+langchain-core
