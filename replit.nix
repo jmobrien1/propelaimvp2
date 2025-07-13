@@ -7,6 +7,6 @@
     pkgs.mesa
     pkgs.libglvnd
     pkgs.poppler_utils
-    pkgs.tesseract # <-- The final required OCR engine
+    pkgs.tesseract
   ];
 }
