@@ -1,0 +1,12 @@
+{
+  "DOLRFP.pdf": {
+    "filename": "DOLRFP.pdf",
+    "status": "processed",
+    "processing_method": "google_document_ai_batch",
+    "content_length": 303673,
+    "timestamp": "2025-07-14T22:16:20.039250",
+    "file_type": "pdf",
+    "document_category": "RFP",
+    "requirements_found": 99
+  }
+}

@@ -1,0 +1,52 @@
+# PropelAI MVP-Plus Requirements
+# Optimized for Google Document AI, robust AI integration, and a simplified environment
+
+# Core web framework
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# Environment and configuration
+python-dotenv>=1.0.0
+
+# AI and ML libraries
+openai>=1.40.0
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langchain-community>=0.2.0
+langchain-core>=0.2.0
+tiktoken>=0.7.0
+
+# Document processing - Google Document AI
+google-cloud-documentai>=2.20.0
+google-cloud-documentai-toolbox>=0.14.2a0
+
+# Document processing fallback
+unstructured>=0.10.0
+
+# Cloud Storage
+google-cloud-storage
+
+# Vector search and embeddings
+faiss-cpu>=1.8.0
+
+# Data validation and serialization
+pydantic>=2.5.0
+
+# Image processing (dependency for some libraries)
+Pillow>=10.0.0
+
+# Optional: Enhanced text processing
+nltk>=3.8.0
+
+# Utility libraries
+requests>=2.31.0
+numpy>=1.24.0
+
+# Pyton multipart
+python-multipart
+
+# Development and debugging
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+google-api-core
+sift-stack-py

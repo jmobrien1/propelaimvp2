@@ -1,0 +1,2 @@
+{"timestamp": "2025-07-13T18:57:41.082657", "type": "trace", "action": "context_assembled", "requirement_ref": "4.5", "cross_refs_found": 0, "context_length": 3770}
+{"timestamp": "2025-07-13T18:57:47.133187", "type": "trace", "action": "compliance_matrix_generated", "requirements_processed": 1, "entries_generated": 1, "success_rate": 1.0, "errors_count": 0}

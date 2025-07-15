@@ -1,0 +1,75 @@
+# Enhanced .replit configuration for PropelAI MVP-Plus
+# Optimized for stable document processing and AI workflows
+
+# Main application entry point updated for modular structure
+run = [
+  "uvicorn",
+  "app.main:app",
+  "--host",
+  "0.0.0.0",
+  "--port",
+  "8080",
+  "--reload",
+]
+
+entrypoint = "app/main.py"
+modules = ["python-3.11"]
+
+# Language configuration
+[languages]
+
+[languages.python3]
+pattern = "**/*.py"
+
+[languages.python3.languageServer]
+start = "pylsp"
+
+# Nix configuration for system dependencies
+[nix]
+channel = "stable-24_05"
+packages = ["bash", "cargo", "libiconv", "libxcrypt", "pkg-config", "rustc"]
+
+# Development tools
+[debugger]
+support = true
+
+[debugger.interactive]
+transport = "localhost:0"
+startCommand = ["dap-python", "app/main.py"]
+
+[debugger.interactive.integratedAdapter]
+dapTcpAddress = "localhost:0"
+
+# Unit testing configuration
+[unitTest]
+language = "python3"
+
+# Git configuration
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "requirements.txt"]
+
+# Deployment settings
+[deployment]
+# Deployment run command updated for modular structure
+run = ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[[ports]]
+localPort = 8080
+externalPort = 80
+
+# Environment variables (set these in Replit Secrets)
+[env]
+PYTHONPATH = "$PYTHONPATH:$REPL_SLUG"
+PYTHONIOENCODING = "utf-8"
+
+# Package management
+[packager]
+language = "python3"
+ignoredPaths = [".venv"]
+
+[packager.features]
+enabledForHosting = false
+packageSearch = true
+guessImports = true
